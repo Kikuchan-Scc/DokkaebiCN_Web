@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#aqua:checked ~ .tab-aqua {
+  @apply flex;
+}
+#aqua:checked ~ .where label[for="aqua"] span {
+  @apply bg-gray-300;
+}
+#watame:checked ~ .tab-watame {
+  @apply flex;
+}
+#watame:checked ~ .where label[for="watame"] span {
+  @apply bg-gray-300;
+}
+#liubo:checked ~ .tab-liubo {
+  @apply flex;
+}
+#liubo:checked ~ .where label[for="liubo"] span {
+  @apply bg-gray-300;
+}
