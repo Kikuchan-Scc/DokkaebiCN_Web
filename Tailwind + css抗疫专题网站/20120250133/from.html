@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>健康上报</title>
+  <link rel="shortcut icon" href="./img/ico.ico">
+  <link href="public/tailwind.css" rel="stylesheet" type="text/css">
+  <link href="CSS/myStyle.css" rel="stylesheet" type="text/css">
+  <link href="./package/swiper-bundle.min.css" rel="stylesheet">
+  <script src="./package/swiper-bundle.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script src="./layer-v3.5.1/layer/layer.js"></script>
+</head>
+
+<body class="bg-gray-200">
+  <div class="containe">
+    <nav class="bg-white border-white">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-14">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- 手机菜单按钮-->
+            <button type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white mobile-btn"
+              aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-shrink-0 flex items-center">
+              <div class="block lg:hidden h-8 w-auto">
+                <svg t="1625497247404" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="1362" width="32" height="32">
+                  <path
+                    d="M304.4 822.5s336.2 99.7 521.7-165.1l43.4-10.9 12.8 24.3-11.1 45.8-70 51.6-159.9 113.4-71.8 38.4-71.3-9.2L330 846.6l-25.6-24.1z"
+                    fill="#d81e06" opacity=".47" p-id="1363"></path>
+                  <path
+                    d="M313.1 156.5h-38.6v-38.6c0-7.1-5.8-12.9-12.9-12.9-7.1 0-12.9 5.8-12.9 12.9v38.6h-38.6c-7.1 0-12.9 5.8-12.9 12.9 0 7.1 5.8 12.9 12.9 12.9h38.6v38.6c0 7.1 5.8 12.9 12.9 12.9 7.1 0 12.9-5.8 12.9-12.9v-38.6h38.6c7.1 0 12.9-5.8 12.9-12.9 0-7.2-5.8-12.9-12.9-12.9z"
+                    fill="#d81e06" p-id="1364"></path>
+                  <path
+                    d="M208.3 277.6c-5.8-5.8-15.4-5.8-21.2 0l-4.6 4.6-4.6-4.6c-5.8-5.8-15.4-5.8-21.2 0-5.8 5.8-5.8 15.4 0 21.2l15.2 15.2c5.8 5.8 15.4 5.8 21.2 0l15.2-15.2c5.9-5.8 5.9-15.4 0-21.2z"
+                    fill="#d81e06" opacity=".57" p-id="1365"></path>
+                  <path
+                    d="M815.1 924.1c-0.4-11.6-10.2-20.7-21.8-20.3l-9 0.3-0.3-9c-0.4-11.6-10.2-20.7-21.8-20.3-11.6 0.4-20.7 10.2-20.3 21.8l1 30.1c0.4 11.6 10.2 20.7 21.8 20.3l30.1-1c11.6-0.6 20.7-10.4 20.3-21.9z"
+                    fill="#d81e06" p-id="1366"></path>
+                  <path
+                    d="M420.7 159.4c-17.7 0-32.2-14.4-32.2-32.2S402.9 95 420.7 95s32.2 14.4 32.2 32.2-14.4 32.2-32.2 32.2z m0-51.5c-10.6 0-19.3 8.7-19.3 19.3s8.7 19.3 19.3 19.3 19.3-8.7 19.3-19.3-8.6-19.3-19.3-19.3z"
+                    fill="#d81e06" opacity=".57" p-id="1367"></path>
+                  <path
+                    d="M740.8 544.8H398c-1 0-1.9-0.8-1.9-1.9v-222c0-1.4 1.1-2.5 2.5-2.5h342.2c1 0 1.9 0.8 1.9 1.9V543c0 0.9-0.8 1.8-1.9 1.8z"
+                    fill="#d81e06" opacity=".47" p-id="1368"></path>
+                  <path
+                    d="M734.6 544.8H414.7c-10.3 0-18.6-8.5-18.6-18.9 0 0 272.3 3.2 346.6-59.9v59.9c0 10.4 2.1 18.9-8.1 18.9z"
+                    fill="#d81e06" p-id="1369"></path>
+                  <path
+                    d="M624 280H487.5c-0.3 0-0.6-0.3-0.6-0.6v-65.9c0-1 0.8-1.8 1.8-1.8h134.2c1 0 1.8 0.8 1.8 1.8v65.9c-0.1 0.4-0.3 0.6-0.7 0.6z"
+                    fill="#d81e06" opacity=".47" p-id="1370"></path>
+                  <path
+                    d="M624.7 285.8c-8.4 0-15.3-6.8-15.3-15.3v-69h-132v69c0 8.4-6.8 15.3-15.3 15.3s-15.3-6.8-15.3-15.3v-84.3c0-8.5 6.8-15.3 15.3-15.3h162.6c8.4 0 15.3 6.8 15.3 15.3v84.3c0 8.5-6.9 15.3-15.3 15.3zM540.3 483.1c-8.6 0-15.5-7-15.5-15.5V358.9c0-8.6 7-15.5 15.5-15.5 8.6 0 15.5 6.9 15.5 15.5v108.7c0 8.5-6.9 15.5-15.5 15.5z"
+                    p-id="1371" fill="#d81e06"></path>
+                  <path
+                    d="M594.7 428.7H486c-8.6 0-15.5-6.9-15.5-15.5s7-15.5 15.5-15.5h108.6c8.6 0 15.5 6.9 15.5 15.5 0.1 8.6-6.9 15.5-15.4 15.5z"
+                    p-id="1372" fill="#d81e06"></path>
+                  <path
+                    d="M748.3 255.3H338.5c-8.4 0-15.3 6.8-15.3 15.3v34.7c0 8.4 6.8 15.3 15.3 15.3 8.4 0 15.3-6.8 15.3-15.3v-19.5H733v259H353.8v-87c0-8.4-6.8-15.3-15.3-15.3-8.4 0-15.3 6.8-15.3 15.3v102.3c0 8.4 6.8 15.3 15.3 15.3h409.8c8.4 0 15.3-6.8 15.3-15.3V270.5c0-8.4-6.9-15.2-15.3-15.2z"
+                    p-id="1373" fill="#d81e06"></path>
+                  <path
+                    d="M338.5 421.3c8.4 0 15.3-6.8 15.3-15.3v-49c0-8.4-6.8-15.3-15.3-15.3-8.4 0-15.3 6.8-15.3 15.3v49c0 8.5 6.9 15.3 15.3 15.3z"
+                    p-id="1374" fill="#d81e06"></path>
+                  <path
+                    d="M413 374.1c-3 0-5.4-2.4-5.4-5.4v-12.2c0-11.2 9.1-20.3 20.3-20.3H457c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4h-29c-5.3 0-9.6 4.3-9.6 9.6v12.2c0 2.9-2.4 5.3-5.4 5.3z"
+                    fill="#d81e06" p-id="1375"></path>
+                  <path d="M366.4 844s264.1 60 434.7-75.9l-116 89.1L579.6 920l-81.5-9.2-115.6-50.4-16.1-16.4z"
+                    fill="#d81e06" p-id="1376"></path>
+                  <path
+                    d="M676.1 768.1c-2.7 0-5.4-0.7-7.7-2.1-4.9-2.9-7.8-8.2-7.5-13.9l0.6-13c0.2-4.3 2.2-8.3 5.6-11.1 5-4.2 6.3-8.2 4.4-14.3-3-9.8-12.3-17.2-23.8-18.8-6.7-1-12-6.2-12.9-12.9-1-6.7 2.6-13.3 8.7-16.1l97.5-44.7c24.7-11.3 53.7-4.3 70.4 17.2l14.8 18.9c2.7 3.5 3.8 7.9 3 12.2-0.8 4.3-3.4 8-7.1 10.3L735.9 732c-18.6 11.3-34.7 21.8-49.2 32.3l-2.4 1.5c-2.6 1.6-5.4 2.3-8.2 2.3z m9-87.7c7.2 6.7 12.6 15 15.5 24.4 1.2 4 2 7.9 2.1 11.7 5.5-3.5 11.2-7 17.2-10.6l71.5-43.3-4.2-5.4c-8-10.3-21.8-13.6-33.6-8.2l-68.5 31.4z"
+                    p-id="1377" fill="#d81e06"></path>
+                  <path
+                    d="M550.4 934.4c-10.8 0-21.5-1.7-31.8-5.4l-224.2-77.6c-15.4-5.4-32.2-4.9-47.3 1.2l-75.8 30.8c-7.8 3.2-16.7-0.6-19.9-8.4-3.2-7.8 0.6-16.7 8.4-19.9l75.8-30.8c22-8.9 46.4-9.6 68.8-1.8l224.1 77.6c20 6.9 42.3 4 59.7-7.9l114.9-77.9c42.4-28.7 83.6-60.2 122.5-93.6l39.8-34.1c5.8-5 6.7-13.7 1.9-19.7-4.5-5.6-12.5-7.1-18.6-3.3l-113 68.4c-26.6 16.1-57.5 35.9-84.6 60.5-20.7 18.8-43.3 26.8-67 23.6-39.3-5.2-69.5-40.2-80.9-55.5h-72c-8.5 0-15.3-6.8-15.3-15.3 0-8.4 6.8-15.3 15.3-15.3h233.2c9.1-5.9 8.5-11.3 7-16.3-3-9.8-12.3-17.2-23.8-18.8L376.5 656c-15.1-2.2-30.6-0.6-45 4.5L180 714.1c-8 2.8-16.7-1.4-19.5-9.3-2.8-8 1.4-16.7 9.3-19.5l151.5-53.6c19-6.7 39.6-8.7 59.6-5.9L652 664.7c23.1 3.3 42.2 19 48.6 40.1 1.2 4 1.9 7.9 2.1 11.7 5.9-3.7 11.6-7.2 17.2-10.6l112.9-68.4c19.3-11.7 44.4-7.2 58.4 10.5 15 18.9 12.4 46.1-6 61.8L845.4 744c-39.7 34.1-81.9 66.3-125.2 95.7l-114.9 77.9c-16.3 11.1-35.5 16.8-54.9 16.8z m-6.8-173.7c11.6 11.3 27.3 23 44.6 25.3 14.6 1.9 28.5-3.3 42.4-15.9 3.5-3.2 7.1-6.3 10.7-9.3h-97.7z"
+                    p-id="1378" fill="#d81e06"></path>
+                </svg>
+              </div>
+
+              <div class="hidden lg:block h-full w-full flex items-center">
+                <svg t="1625497247404" class="icon mt-1" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="1362" width="48" height="48">
+                  <path
+                    d="M304.4 822.5s336.2 99.7 521.7-165.1l43.4-10.9 12.8 24.3-11.1 45.8-70 51.6-159.9 113.4-71.8 38.4-71.3-9.2L330 846.6l-25.6-24.1z"
+                    fill="#d81e06" opacity=".47" p-id="1363"></path>
+                  <path
+                    d="M313.1 156.5h-38.6v-38.6c0-7.1-5.8-12.9-12.9-12.9-7.1 0-12.9 5.8-12.9 12.9v38.6h-38.6c-7.1 0-12.9 5.8-12.9 12.9 0 7.1 5.8 12.9 12.9 12.9h38.6v38.6c0 7.1 5.8 12.9 12.9 12.9 7.1 0 12.9-5.8 12.9-12.9v-38.6h38.6c7.1 0 12.9-5.8 12.9-12.9 0-7.2-5.8-12.9-12.9-12.9z"
+                    fill="#d81e06" p-id="1364"></path>
+                  <path
+                    d="M208.3 277.6c-5.8-5.8-15.4-5.8-21.2 0l-4.6 4.6-4.6-4.6c-5.8-5.8-15.4-5.8-21.2 0-5.8 5.8-5.8 15.4 0 21.2l15.2 15.2c5.8 5.8 15.4 5.8 21.2 0l15.2-15.2c5.9-5.8 5.9-15.4 0-21.2z"
+                    fill="#d81e06" opacity=".57" p-id="1365"></path>
+                  <path
+                    d="M815.1 924.1c-0.4-11.6-10.2-20.7-21.8-20.3l-9 0.3-0.3-9c-0.4-11.6-10.2-20.7-21.8-20.3-11.6 0.4-20.7 10.2-20.3 21.8l1 30.1c0.4 11.6 10.2 20.7 21.8 20.3l30.1-1c11.6-0.6 20.7-10.4 20.3-21.9z"
+                    fill="#d81e06" p-id="1366"></path>
+                  <path
+                    d="M420.7 159.4c-17.7 0-32.2-14.4-32.2-32.2S402.9 95 420.7 95s32.2 14.4 32.2 32.2-14.4 32.2-32.2 32.2z m0-51.5c-10.6 0-19.3 8.7-19.3 19.3s8.7 19.3 19.3 19.3 19.3-8.7 19.3-19.3-8.6-19.3-19.3-19.3z"
+                    fill="#d81e06" opacity=".57" p-id="1367"></path>
+                  <path
+                    d="M740.8 544.8H398c-1 0-1.9-0.8-1.9-1.9v-222c0-1.4 1.1-2.5 2.5-2.5h342.2c1 0 1.9 0.8 1.9 1.9V543c0 0.9-0.8 1.8-1.9 1.8z"
+                    fill="#d81e06" opacity=".47" p-id="1368"></path>
+                  <path
+                    d="M734.6 544.8H414.7c-10.3 0-18.6-8.5-18.6-18.9 0 0 272.3 3.2 346.6-59.9v59.9c0 10.4 2.1 18.9-8.1 18.9z"
+                    fill="#d81e06" p-id="1369"></path>
+                  <path
+                    d="M624 280H487.5c-0.3 0-0.6-0.3-0.6-0.6v-65.9c0-1 0.8-1.8 1.8-1.8h134.2c1 0 1.8 0.8 1.8 1.8v65.9c-0.1 0.4-0.3 0.6-0.7 0.6z"
+                    fill="#d81e06" opacity=".47" p-id="1370"></path>
+                  <path
+                    d="M624.7 285.8c-8.4 0-15.3-6.8-15.3-15.3v-69h-132v69c0 8.4-6.8 15.3-15.3 15.3s-15.3-6.8-15.3-15.3v-84.3c0-8.5 6.8-15.3 15.3-15.3h162.6c8.4 0 15.3 6.8 15.3 15.3v84.3c0 8.5-6.9 15.3-15.3 15.3zM540.3 483.1c-8.6 0-15.5-7-15.5-15.5V358.9c0-8.6 7-15.5 15.5-15.5 8.6 0 15.5 6.9 15.5 15.5v108.7c0 8.5-6.9 15.5-15.5 15.5z"
+                    p-id="1371" fill="#d81e06"></path>
+                  <path
+                    d="M594.7 428.7H486c-8.6 0-15.5-6.9-15.5-15.5s7-15.5 15.5-15.5h108.6c8.6 0 15.5 6.9 15.5 15.5 0.1 8.6-6.9 15.5-15.4 15.5z"
+                    p-id="1372" fill="#d81e06"></path>
+                  <path
+                    d="M748.3 255.3H338.5c-8.4 0-15.3 6.8-15.3 15.3v34.7c0 8.4 6.8 15.3 15.3 15.3 8.4 0 15.3-6.8 15.3-15.3v-19.5H733v259H353.8v-87c0-8.4-6.8-15.3-15.3-15.3-8.4 0-15.3 6.8-15.3 15.3v102.3c0 8.4 6.8 15.3 15.3 15.3h409.8c8.4 0 15.3-6.8 15.3-15.3V270.5c0-8.4-6.9-15.2-15.3-15.2z"
+                    p-id="1373" fill="#d81e06"></path>
+                  <path
+                    d="M338.5 421.3c8.4 0 15.3-6.8 15.3-15.3v-49c0-8.4-6.8-15.3-15.3-15.3-8.4 0-15.3 6.8-15.3 15.3v49c0 8.5 6.9 15.3 15.3 15.3z"
+                    p-id="1374" fill="#d81e06"></path>
+                  <path
+                    d="M413 374.1c-3 0-5.4-2.4-5.4-5.4v-12.2c0-11.2 9.1-20.3 20.3-20.3H457c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4h-29c-5.3 0-9.6 4.3-9.6 9.6v12.2c0 2.9-2.4 5.3-5.4 5.3z"
+                    fill="#d81e06" p-id="1375"></path>
+                  <path d="M366.4 844s264.1 60 434.7-75.9l-116 89.1L579.6 920l-81.5-9.2-115.6-50.4-16.1-16.4z"
+                    fill="#d81e06" p-id="1376"></path>
+                  <path
+                    d="M676.1 768.1c-2.7 0-5.4-0.7-7.7-2.1-4.9-2.9-7.8-8.2-7.5-13.9l0.6-13c0.2-4.3 2.2-8.3 5.6-11.1 5-4.2 6.3-8.2 4.4-14.3-3-9.8-12.3-17.2-23.8-18.8-6.7-1-12-6.2-12.9-12.9-1-6.7 2.6-13.3 8.7-16.1l97.5-44.7c24.7-11.3 53.7-4.3 70.4 17.2l14.8 18.9c2.7 3.5 3.8 7.9 3 12.2-0.8 4.3-3.4 8-7.1 10.3L735.9 732c-18.6 11.3-34.7 21.8-49.2 32.3l-2.4 1.5c-2.6 1.6-5.4 2.3-8.2 2.3z m9-87.7c7.2 6.7 12.6 15 15.5 24.4 1.2 4 2 7.9 2.1 11.7 5.5-3.5 11.2-7 17.2-10.6l71.5-43.3-4.2-5.4c-8-10.3-21.8-13.6-33.6-8.2l-68.5 31.4z"
+                    p-id="1377" fill="#d81e06"></path>
+                  <path
+                    d="M550.4 934.4c-10.8 0-21.5-1.7-31.8-5.4l-224.2-77.6c-15.4-5.4-32.2-4.9-47.3 1.2l-75.8 30.8c-7.8 3.2-16.7-0.6-19.9-8.4-3.2-7.8 0.6-16.7 8.4-19.9l75.8-30.8c22-8.9 46.4-9.6 68.8-1.8l224.1 77.6c20 6.9 42.3 4 59.7-7.9l114.9-77.9c42.4-28.7 83.6-60.2 122.5-93.6l39.8-34.1c5.8-5 6.7-13.7 1.9-19.7-4.5-5.6-12.5-7.1-18.6-3.3l-113 68.4c-26.6 16.1-57.5 35.9-84.6 60.5-20.7 18.8-43.3 26.8-67 23.6-39.3-5.2-69.5-40.2-80.9-55.5h-72c-8.5 0-15.3-6.8-15.3-15.3 0-8.4 6.8-15.3 15.3-15.3h233.2c9.1-5.9 8.5-11.3 7-16.3-3-9.8-12.3-17.2-23.8-18.8L376.5 656c-15.1-2.2-30.6-0.6-45 4.5L180 714.1c-8 2.8-16.7-1.4-19.5-9.3-2.8-8 1.4-16.7 9.3-19.5l151.5-53.6c19-6.7 39.6-8.7 59.6-5.9L652 664.7c23.1 3.3 42.2 19 48.6 40.1 1.2 4 1.9 7.9 2.1 11.7 5.9-3.7 11.6-7.2 17.2-10.6l112.9-68.4c19.3-11.7 44.4-7.2 58.4 10.5 15 18.9 12.4 46.1-6 61.8L845.4 744c-39.7 34.1-81.9 66.3-125.2 95.7l-114.9 77.9c-16.3 11.1-35.5 16.8-54.9 16.8z m-6.8-173.7c11.6 11.3 27.3 23 44.6 25.3 14.6 1.9 28.5-3.3 42.4-15.9 3.5-3.2 7.1-6.3 10.7-9.3h-97.7z"
+                    p-id="1378" fill="#d81e06"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden sm:block sm:ml-6">
+              <div class="flex space-x-4">
+                <a href="./home.html"
+                  class="text-black border-blue-700 border-b-2 px-3 py-2 text-sm font-medium h-14 w-24 text-center leading-10 transition duration-500 ease-in-out"
+                  aria-current="page">首页</a>
+                <a href="./gushi.html"
+                  class="text-black hover:border-blue-700 border-white border-b-2 px-3 py-2 text-sm font-medium h-14 w-24 text-center leading-10 transition duration-500 ease-in-out">实时新闻
+                </a>
+                <a href="./shipin.html"
+                  class="text-black hover:border-blue-700 border-white border-b-2 px-3 py-2 text-sm font-medium h-14 w-24 text-center leading-10 transition duration-500 ease-in-out">视频新闻
+                </a>
+
+                <div class=" relative">
+                  <button href="#"
+                    class="outline-none focus:outline-none text-black hover:border-blue-700 border-white border-b-2 px-3 py-2 text-sm font-medium h-14 w-24 text-center leading-10 transition duration-500 ease-in-out"
+                    id="menu-btn">全民健康⏷
+                  </button>
+                  </button>
+                  <!--二级菜单-->
+                  <div class="absolute z-50 bg-white right-0 rounded-md p-2 mt-1 hidden" id="dropdown">
+                    <ul class=" space-y-2 lg:w-48">
+                      <li class="hover:bg-gray-300 w-full">
+                        <a href="./from.html" class=" flex p-2 font-medium text-gray-600 rounded-md">健康上报</a>
+                      </li>
+                      <li class="hover:bg-gray-300 w-full">
+                        <a href="#" class=" flex p-2 font-medium text-gray-600 rounded-md">疫苗预约</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="#"
+                  class="text-black hover:border-blue-700 border-white border-b-2 px-3 py-2 text-sm font-medium h-14 w-24 text-center leading-10 transition duration-500 ease-in-out">关于
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+            <!-- 手机下拉菜单 -->
+
+          </div>
+        </div>
+
+        <div class="sm:hidden mobile-menu" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="./home.html"
+              class="transition duration-500 ease-in-out border-blue-800 border-b-2 text-black block px-3 py-2 text-base font-medium"
+              aria-current="page">首页</a>
+            <a href="./home.html"
+              class="transition duration-500 ease-in-out text-black hover:border-blue-700 border-b-2 block px-3 py-2 text-base font-medium">视频专区</a>
+            <a href="./shipin.html"
+              class="transition duration-500 ease-in-out text-black hover:border-blue-700 border-b-2 block px-3 py-2 text-base font-medium">实时新闻</a>
+            <a href="#"
+              class="transition duration-500 ease-in-out text-black hover:border-blue-700 border-b-2 block px-3 py-2 text-base font-medium">疫苗预约</a>
+            <a href="./from.html"
+              class="transition duration-500 ease-in-out text-black hover:border-blue-700 border-b-2 block px-3 py-2 text-base font-medium">健康上报</a>
+          </div>
+        </div>
+    </nav>
+
+    <div class="w-full">
+      <div class="w-10/12 mx-auto">
+        <form method="GET" class="px-6 py-9 my-12 max-w-3xl mx-auto space-y-5 bg-white shadow-2xl rounded-xl">
+          <div class="text-3xl text-center">健康上报</div>
+          <p class=" opacity-40">按要求输入下面的个人信息</p>
+          <div>
+            <div>
+              <div class="mb-2">
+                <label for="name">姓名：</label>
+                <input
+                  class="inputs border block py-2 px-4 w-full rounded focus:outline-none focus:border-blue-500 border-gray-400"
+                  type="text" id="name" required>
+                </p>
+              </div>
+              <div class="mb-2">
+                <label for="phone">手机号码：</label>
+                <input
+                  class="inputs mt-1 border block py-2 px-4 w-full rounded focus:outline-none focus:border-blue-500 border-gray-400"
+                  type="text" id="phone" required>
+              </div>
+              <div class="mb-2">
+                <label for="shenfen">身份证号码：</label>
+                <input
+                  class="inputs mt-1 border block py-2 px-4 w-full rounded focus:outline-none focus:border-blue-500 border-gray-400"
+                  type="text" id="shenfen" required>
+              </div>
+              <div class="mb-2">
+                <label for="sex">性别：</label>
+                <select
+                  class="mt-1 border block py-2 px-4 w-full rounded focus:outline-none focus:border-blue-500 border-gray-400"
+                  id="sex" required>
+                  <option>男</option>
+                  <option>女</option>
+                </select>
+              </div>
+              <div class="mb-2">
+                <label for="chusheng">出生日期：</label>
+                <input
+                  class="mt-1 border block py-2 px-4 w-full rounded focus:outline-none focus:border-blue-500 border-gray-400"
+                  type="date" id="chusheng">
+              </div>
+            </div>
+            <div class="text-2xl mb-2">身体状况：</div>
+            <div class="flex flex-col">
+              <div class="mb-2">
+                <label for="one">自觉正常</label>
+                <input type="checkbox" id="one">
+              </div>
+              <div class="mb-2">
+                <label for="two">发热37.3°（含）以上</label>
+                <input type="checkbox" id="two">
+              </div>
+              <div class="mb-2">
+                <label for="san">干咳</label>
+                <input name="check" type="checkbox" id="san">
+              </div>
+              <div class="mb-2">
+                <label for="si">乏力</label>
+                <input name="check" type="checkbox" id="si">
+              </div>
+              <div class="mb-2">
+                <label for="five">鼻塞流涕</label>
+                <input name="check" type="checkbox" id="five">
+              </div>
+              <div class="mb-2">
+                <label for="six">咽痛</label>
+                <input name="check" type="checkbox" id="six">
+              </div>
+              <div class="mb-2">
+                <label for="qi">结膜炎</label>
+                <input name="check" type="checkbox" id="qi">
+              </div>
+              <div class="mb-2">
+                <label for="ba">肌痛</label>
+                <input name="check" type="checkbox" id="ba">
+              </div>
+              <div class="mb-2">
+                <label for="jiu">腹泻</label>
+                <input name="check" type="checkbox" id="jiu">
+              </div>
+            </div>
+            <label for="qita">其他症状：</label>
+            <textarea
+              class="resize-none border rounded-md h-32 w-full focus:outline-none focus:border-blue-500 border-gray-400"
+              id="qita"></textarea>
+            <div class="flex justify-center space-x-5 mt-5">
+              <a onclick="alertA()"
+                class="flex justify-center items-center bg-blue-500 cursor-pointer transition duration-500 ease-in-out hover:bg-blue-700 w-32 h-12 text-white rounded-md text-xl">提交</a>
+              <input type="reset"
+                class="bg-blue-500 transition duration-500 ease-in-out hover:bg-blue-700 w-32 h-12 text-white rounded-md text-xl"></input>
+            </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <!--页脚开始-->
+    <div class="w-full bg-gray-600 text-white">
+      <div class="xl:px-40 lg:px-20 md:px-10 sm:px-5 px-10">
+        <div class="w-full items sm:py-4 py-4 flex flex-row justify-start flex-col sm:flex-row">
+          <div class="w-full pt-4 flex flex-col space-y-6 sm:w-1/5">
+            <div class="opacity-80 text-xl">导航</div>
+            <a href="./home.html" class="opacity-60">首页</a>
+            <a href="./gushi.html" class="opacity-60">实时新闻</a>
+            <a href="./shipin.html" class="opacity-60">视频新闻</a>
+            <a href="./from.html" class="opacity-60">健康上报</a>
+            <a href="#" class="opacity-60">疫苗预约</a>
+            <a href="#" class="opacity-60">关于</a>
+          </div>
+          <div class="w-full pt-4 flex flex-col space-y-6 sm:w-1/5">
+            <div class="opacity-80 text-xl">友情链接</div>
+            <a href="#" class="opacity-60">百度</a>
+            <a href="#" class="opacity-60">新浪微博</a>
+            <a href="#" class="opacity-60">搜狐新闻</a>
+            <a href="#" class="opacity-60">腾讯新闻</a>
+            <a href="#" class="opacity-60">新华网</a>
+          </div>
+          <div class="w-full pt-4 flex flex-col space-y-6 sm:w-1/5">
+            <div class="opacity-80 text-xl">合作企业</div>
+            <a href="#" class="opacity-60">河南卫生管理局</a>
+            <a href="#" class="opacity-60">河南制药中心</a>
+            <a href="#" class="opacity-60">广西洪兹中医院</a>
+          </div>
+          <div class="w-full pt-4 flex flex-col space-y-6 sm:w-1/5">
+            <div class="opacity-80 text-xl">相关机构</div>
+            <a href="#" class="opacity-60">世界卫生组织</a>
+            <a href="#" class="opacity-60">中国卫生有害生物防制协会</a>
+            <a href="#" class="opacity-60">国家卫生健康委卫生健康监督中心</a>
+            <a href="#" class="opacity-60">广州大学城医学研究中心</a>
+          </div>
+          <div class="w-full pt-6 flex mb-1 items-end sm:w-1/5">
+            <div class="flex flex-row space-x-8">
+              <a>
+                <svg t="1622966924113" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="2509" width="32" height="32">
+                  <path
+                    d="M512 0C229.003636 0 0 229.003636 0 512s229.003636 512 512 512 512-229.003636 512-512S794.996364 0 512 0z m210.385455 641.396364c-7.447273 9.309091-26.996364-1.861818-41.89091-32.581819-3.723636 13.963636-13.032727 36.305455-34.443636 64.232728 35.374545 8.378182 44.683636 42.821818 33.512727 61.44-8.378182 13.032727-26.996364 24.203636-59.578181 24.203636-58.647273 0-83.781818-15.825455-95.883637-26.996364-1.861818-2.792727-5.585455-3.723636-10.24-3.723636-4.654545 0-7.447273 0.930909-10.24 3.723636-11.170909 11.170909-37.236364 26.996364-95.883636 26.996364-32.581818 0-52.130909-11.170909-59.578182-24.203636-12.101818-18.618182-1.861818-53.061818 33.512727-61.44-20.48-27.927273-29.789091-50.269091-34.443636-64.232728-13.963636 30.72-34.443636 42.821818-41.890909 32.581819-5.585455-8.378182-8.378182-26.065455-7.447273-38.167273 3.723636-46.545455 34.443636-85.643636 53.061818-106.123636-2.792727-5.585455-8.378182-40.029091 14.894546-63.301819v-1.861818c0-92.16 65.163636-158.254545 148.014545-158.254545 81.92 0 148.014545 66.094545 148.014546 158.254545v1.861818c23.272727 23.272727 17.687273 57.716364 14.894545 63.301819 17.687273 20.48 49.338182 59.578182 53.061818 106.123636 0.930909 12.101818-0.930909 29.789091-7.447272 38.167273z"
+                    fill="#30A5DD" p-id="2510"></path>
+                </svg>
+              </a>
+              <a>
+                <svg t="1622967186793" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="3428" width="32" height="32">
+                  <path
+                    d="M352.814545 385.396364m-33.512727 0a33.512727 33.512727 0 1 0 67.025455 0 33.512727 33.512727 0 1 0-67.025455 0Z"
+                    fill="#50B674" p-id="3429"></path>
+                  <path
+                    d="M502.690909 384.465455m-33.512727 0a33.512727 33.512727 0 1 0 67.025454 0 33.512727 33.512727 0 1 0-67.025454 0Z"
+                    fill="#50B674" p-id="3430"></path>
+                  <path
+                    d="M576.232727 534.341818m-23.272727 0a23.272727 23.272727 0 1 0 46.545455 0 23.272727 23.272727 0 1 0-46.545455 0Z"
+                    fill="#50B674" p-id="3431"></path>
+                  <path
+                    d="M694.458182 536.203636m-23.272727 0a23.272727 23.272727 0 1 0 46.545454 0 23.272727 23.272727 0 1 0-46.545454 0Z"
+                    fill="#50B674" p-id="3432"></path>
+                  <path
+                    d="M512 0C229.003636 0 0 229.003636 0 512s229.003636 512 512 512 512-229.003636 512-512S794.996364 0 512 0z m-87.505455 630.225455c-26.996364 0-48.407273-5.585455-75.403636-11.17091l-75.403636 37.236364 21.410909-64.232727c-53.992727-37.236364-85.643636-85.643636-85.643637-145.221818 0-102.4 96.814545-182.458182 215.04-182.458182 105.192727 0 198.283636 64.232727 216.901819 150.807273-6.516364-0.930909-13.963636-0.930909-20.48-0.93091-102.4 0-182.458182 76.334545-182.458182 170.356364 0 15.825455 2.792727 30.72 6.516363 44.683636-7.447273 0-13.963636 0.930909-20.48 0.93091z m314.647273 75.403636l15.825455 53.992727-58.647273-32.581818c-21.410909 5.585455-42.821818 11.170909-64.232727 11.170909-102.4 0-182.458182-69.818182-182.458182-155.461818s80.058182-155.461818 182.458182-155.461818c96.814545 0 182.458182 69.818182 182.458182 155.461818 0 47.476364-31.650909 90.298182-75.403637 122.88z"
+                    fill="#50B674" p-id="3433"></path>
+                </svg>
+              </a>
+              <a>
+                <svg t="1622967216255" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="4466" width="32" height="32">
+                  <path
+                    d="M448.698182 482.210909c-96.814545 4.654545-175.010909 56.785455-175.010909 121.949091s78.196364 114.501818 175.010909 109.847273S623.709091 647.912727 623.709091 582.749091c-0.930909-64.232727-79.127273-105.192727-175.010909-100.538182z m65.163636 164.770909c-29.789091 39.098182-88.436364 57.716364-145.221818 26.065455-26.996364-14.894545-26.065455-43.752727-26.065455-43.752728s-11.170909-92.16 85.643637-103.330909c97.745455-12.101818 115.432727 81.92 85.643636 121.018182z"
+                    fill="#EA5D5C" p-id="4467"></path>
+                  <path
+                    d="M448.698182 584.610909c-6.516364 4.654545-7.447273 13.032727-3.723637 18.618182 2.792727 5.585455 11.170909 6.516364 16.756364 1.861818 5.585455-4.654545 8.378182-13.032727 4.654546-18.618182-2.792727-5.585455-10.24-6.516364-17.687273-1.861818zM403.083636 597.643636c-18.618182 1.861818-30.72 17.687273-30.72 33.512728 0 14.894545 14.894545 26.065455 32.581819 24.203636 17.687273-1.861818 32.581818-15.825455 32.581818-31.650909s-13.963636-27.927273-34.443637-26.065455z"
+                    fill="#EA5D5C" p-id="4468"></path>
+                  <path
+                    d="M512 0C229.003636 0 0 229.003636 0 512s229.003636 512 512 512 512-229.003636 512-512S794.996364 0 512 0z m197.352727 626.501818C669.323636 712.145455 538.065455 754.036364 441.250909 746.589091c-92.16-7.447273-211.316364-38.167273-223.418182-151.738182 0 0-6.516364-51.2 42.821818-117.294545 0 0 70.749091-99.607273 152.669091-128.465455 82.850909-27.927273 92.16 19.549091 92.16 48.407273-4.654545 24.203636-12.101818 38.167273 18.618182 28.858182 0 0 80.989091-38.167273 114.501818-4.654546 26.996364 26.996364 4.654545 65.163636 4.654546 65.163637s-11.170909 12.101818 12.101818 16.756363c21.410909 3.723636 94.021818 37.236364 53.992727 122.88z m-80.058182-236.450909c-8.378182 0-15.825455-7.447273-15.825454-15.825454 0-9.309091 7.447273-15.825455 15.825454-15.825455 0 0 99.607273-18.618182 87.505455 89.367273v1.861818c-0.930909 7.447273-7.447273 13.963636-15.825455 13.963636-9.309091 0-15.825455-7.447273-15.825454-15.825454 0-1.861818 15.825455-73.541818-55.854546-57.716364zM797.789091 493.381818c-2.792727 18.618182-12.101818 11.170909-22.341818 11.170909-13.032727 0-23.272727-16.756364-23.272728-29.789091 0-11.170909 4.654545-22.341818 4.654546-22.341818 0.930909-4.654545 12.101818-34.443636-7.447273-78.196363-35.374545-60.509091-106.123636-60.509091-114.501818-57.716364-8.378182 3.723636-21.410909 5.585455-21.410909 5.585454-13.032727 0-23.272727-10.24-23.272727-23.272727 0-11.170909 7.447273-19.549091 16.756363-22.341818 0 0 0 0.930909 0.930909 0.930909s1.861818 0.930909 1.861819 0.930909c10.24-1.861818 45.614545-4.654545 79.127272 3.723637 62.370909 14.894545 146.152727 83.781818 108.916364 211.316363z"
+                    fill="#EA5D5C" p-id="4469"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="opacity-60 sm:py-2 sm:text-center text-center">
+          <p>版权所有：20计应01班伍赞威</p>
+        </div>
+      </div>
+    </div>
+    <!--页脚结束-->
+  </div>
+</body>
+<script>
+  function alertA() {
+    var name = document.getElementById("name").value
+    var phone = document.getElementById("phone").value
+    var shenfen = document.getElementById("shenfen").value
+    var sex = document.getElementById("sex").value
+    var chusheng = document.getElementById("chusheng").value
+    if (!checkpatt(name, /^[\u4e00-\u9fa5]{0,}$/)) {
+      layer.tips("请输入正确的姓名", "#name");
+      return false;
+    }
+    if (!checkpatt(phone, /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/)) {
+      layer.tips("请输入正确的手机号码（11位手机号）", "#phone");
+      return false;
+    }
+    if (!checkpatt(shenfen, /^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/)) {
+      layer.tips("请输入正确的身份证号码", "#shenfen");
+      return false;
+    }
+    if (chusheng == "") {
+      layer.tips("请选择出生日期", "#chusheng");
+      return false;
+    }
+    layer.confirm("请确认您输入的信息是否无误：\n姓名：" + name + "\n手机号码：" + phone + "\n身份证号码：" + shenfen + "\n性别：" + sex + "\n出生日期：" + chusheng, {
+      icon: 7,
+      btn: ["提交", "返回修改"]
+    }, function () {
+      layer.alert("资料上传成功！", {
+        icon: 6,
+        btn:["返回首页" , "留在此页"]
+      },
+        function () {
+          window.location.href='./home.html'
+        },
+        function(){
+          return
+        })
+    }, function () {
+      return
+    })
+    return false;
+  }
+  function checkpatt(str, reg) {  //验证正则表达式
+    let reg1 = reg;
+    return reg1.test(str)
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector("#menu-btn")
+    const dropdown = document.querySelector("#dropdown")
+    const mobileBtn = document.querySelector(".mobile-btn")
+    const mobileMenu = document.querySelector(".mobile-menu")
+    menuBtn.addEventListener('click', () => {
+      if (dropdown.classList.contains('hidden')) {
+        dropdown.classList.remove('hidden');
+        dropdown.classList.add('flex');
+      } else {
+        dropdown.classList.remove('flex');
+        dropdown.classList.add('hidden')
+      }
+    })
+    const btn = document.querySelector(".mobile-btn")
+    const menu = document.querySelector(".mobile-menu")
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    })
+  })
+
+</script>
+
+</html>
